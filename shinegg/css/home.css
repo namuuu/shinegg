@@ -1,0 +1,18 @@
+
+#recent-tournaments {
+    float: left;
+    background-color: grey;
+    margin-top: 5vh;
+    margin-left: 5vw;
+    width: 25vw;
+    height: 100vh;
+}
+
+#feed {
+    float: right;
+    background-color: grey;
+    margin-top: 5vh;
+    margin-right: 5vw;
+    width: 60vw;
+    height: 100vh;
+}

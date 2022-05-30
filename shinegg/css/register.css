@@ -1,0 +1,39 @@
+
+#form {
+    text-align: center;
+}
+
+#button-register {
+    padding: 10px 0;
+    margin-top: 10%;
+    background-color: white;
+    border: 1px solid black;
+}
+
+img {
+    opacity: 60%;
+    position: absolute;
+    bottom: 1px;
+    left: 0px;
+    height: 80%;
+    width: auto;
+    
+}
+
+h1 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 3.8vw;
+}
+
+label {
+    display: block;
+    padding-top: 5vh;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2vw;
+}
+
+input {
+    width: 30%;
+    font-size: 2vw;
+    font-family: 'Josefin Sans', sans-serif;
+}

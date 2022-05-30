@@ -1,0 +1,81 @@
+
+
+#login {
+    width: 50%;
+    height: fit-content;
+    text-align: center;
+}
+
+.header-input {
+    display: block;
+    padding-top: 5vh;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 3.2vw;
+}
+
+.text-input {
+    width: 60%;
+    font-size: 2vw;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#button-login {
+    border: 1px solid black;
+    background-color: white;
+}
+
+#button-login:hover {
+    background-color: rgb(241, 241, 241);
+}
+
+#button-register {
+    padding: 0.5vw 4vw;
+    background-color: #ffb9c6;
+    color: white;
+    border: 2px solid white;
+    
+}
+
+#button-register:hover {
+    background-color: #ffcad4;
+}
+
+.button-input {
+    padding: 1vh;
+    width: 35%;
+    margin-top: 5vh;
+    font-size: 2vw;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#register {
+    position: absolute;
+    top: 10vh;
+    right: 0;
+    background-color: #ffb9c6;
+    width: 50%;
+    height: 90vh;
+    text-align: center;
+    text-decoration: none;
+}
+
+.title {
+    padding-top: 5vh;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 3.8vw;
+}
+
+.desc {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2vw;
+    margin-bottom: 30%;
+}
+
+#fox-image {
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+    height: auto;
+    width: 20%;
+    
+}
