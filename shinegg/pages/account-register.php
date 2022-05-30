@@ -18,5 +18,6 @@
     <input type="submit" name="action" id="button-register" value="S'inscrire">
 </form>
 
-<img src="img/sheik_register.png" alt="Sheik Register">
+<img id="sheik_img" src="img/sheik_register.png" alt="Sheik Register">
+<img id="pichu_img" src="img/pichu_taunt.png" alt="Pichu Register">
 </div>

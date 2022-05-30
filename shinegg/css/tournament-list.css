@@ -1,0 +1,74 @@
+body {
+    text-align: center;
+}
+
+#main-list {
+    display: block;
+    margin: 2vh auto 0 auto;
+    width: 98%;
+    border: black solid 1px;
+}
+
+#header {
+    background-color: #C93246;
+    color: white;
+    font-size: 3vh;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+#header-right {
+    display: inline;
+    float: right;
+    margin-right: 5%;
+    border-left: 2px solid white;
+    padding-left: 5%;
+}
+
+#header-middle {
+    display: inline;
+    width: 10%;
+}
+
+#header-left {
+    display: inline;
+    float: left;
+    margin-left: 5%;
+    border-right: 2px solid white;
+    padding-right: 5%;
+}
+
+.tournament-data {
+    background-color: white;
+    color: black;
+    font-size: 3vh;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.tournament-date {
+    display: inline;
+    float: left;
+    margin-left: 5%;
+    border-right: 2px solid black;
+    padding-right: 5%;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+}
+
+.tournament-name {
+    display: inline;
+    width: 10%;
+}
+
+.tournament-entrants {
+    display: inline;
+    float: right;
+    margin-right: 5%;
+    border-left: 2px solid black;
+    padding-left: 5%;
+}

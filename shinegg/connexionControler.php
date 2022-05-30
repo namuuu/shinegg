@@ -11,7 +11,6 @@ session_start();
 	if ($view = getArg("view")) {
 	  //$qs = "view=$view";
 	  $tabQs["view"] = $view;
-      echo $view;
 	}
 
 	if ($action = getArg("action"))
@@ -48,6 +47,9 @@ session_start();
 					if (connectUser($login, $passe)) {
 						setcookie("login",$login , time()+60*60*24*30);
 						setcookie("passe",$password, time()+60*60*24*30);
+					} else {
+						$tabQs["result"] = "error-login";
+						$tabQs["view"] = "account-login";
 					}
 
 				}
@@ -66,8 +68,19 @@ session_start();
 
 			break;
 
-			case "S'inscrire" :
+			case "S\'inscrire" :
+				$tabQs["view"] = "account-login";
+				if ($login = getArg("id")) {
+					if ($passe = getArg("password")) {
+						if (createUser($login, $passe)) {
+							$tabQs["result"] = "success";
+						} else {
+							$tabQs["result"] = "error-existing";
+						}
+					}
+				}
 				
+
 			break;
 		}
 

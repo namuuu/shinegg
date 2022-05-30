@@ -29,5 +29,29 @@ function connectUser($name, $password)
 	return true;
 }
 
+function createUser($name, $password)
+{
+	$check = SQLGetChamp("SELECT id
+                      FROM users
+                      WHERE name = '$name' AND password = '$password';");
+
+	if($check)
+		return false;
+
+	$id = SQLGetChamp("SELECT MAX(id)
+                      FROM users");
+
+	$id++;
+
+	// crée une nouvelle conversation et renvoie son identifiant
+	$sql = "INSERT INTO users(id, name, password)
+	        VALUES ($id, '$name', '$password');";
+  	SQLInsert($sql);
+
+  	return SQLGetChamp("SELECT id
+                      FROM users
+                      WHERE name = '$name';");
+}
+
 
 ?>

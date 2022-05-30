@@ -8,6 +8,21 @@
 <div id="login">
     <h1 class="title">De retour ?</h1>
 
+    <?php
+        $result = getArg("result");
+        switch($result) {
+            case "success":
+                echo "<div id=\"info\" class=\"info-success\"> Le compte a été créé avec succès ! </div>";
+                break;
+            case "error-existing":
+                echo "<div id=\"info\" class=\"info-alert\"> Ce compte existe déjà ! </div>";
+                break;
+            case "error-login":
+                echo "<div id=\"info\" class=\"info-alert\"> Les identifiants sont invalides ! </div>";
+                break;
+        }
+    ?>
+
     <form action="connexionControler.php" method="GET">  
 
     <label for="id" class="header-input">Identifiant</label> <br>

@@ -19,7 +19,7 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 <div id="header-banner">
     <ul id="header-list-left">
         <li> <a href="index.php?view=accueil"> Home </a> </li>
-        <li> <a href="" style="font-size: 2.5vh; padding-top: 0;"> Liste des <br> tournois</a> </li>
+        <li> <a href="index.php?view=tournament-list" style="font-size: 2.5vh; padding-top: 0;"> Liste des <br> tournois</a> </li>
     </ul>
 
     <img id="header-image" src="img/logo_shinegg_blanc.png" alt="Logo ShineGG">

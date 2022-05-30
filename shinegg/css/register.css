@@ -10,14 +10,22 @@
     border: 1px solid black;
 }
 
-img {
+#sheik_img {
     opacity: 60%;
     position: absolute;
     bottom: 1px;
     left: 0px;
     height: 80%;
     width: auto;
-    
+}
+
+#pichu_img {
+    opacity: 60%;
+    position: absolute;
+    bottom: 20%;
+    right: 0px;
+    height: 65%;
+    width: auto;
 }
 
 h1 {
