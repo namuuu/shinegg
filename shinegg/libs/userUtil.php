@@ -53,5 +53,20 @@ function createUser($name, $password)
                       WHERE name = '$name';");
 }
 
+function getUserData($id) 
+{
+    $SQL="SELECT name, main_char, team, bio, profile_picture FROM users WHERE id='$id'";
+
+    $Request = parcoursRs(SQLSelect($SQL))[0];
+    // si on avait besoin de plus d'un champ
+    // on aurait du utiliser SQLSelect
+
+    if (!$Request) {
+        return false;
+    } 
+
+    return $Request;
+}
+
 
 ?>
