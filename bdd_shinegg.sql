@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost:3306
--- Généré le :  Lun 30 Mai 2022 à 14:45
+-- Généré le :  Lun 30 Mai 2022 à 15:55
 -- Version du serveur :  10.3.31-MariaDB-0+deb10u1
 -- Version de PHP :  7.3.31-1~deb10u1
 
@@ -75,6 +75,7 @@ INSERT INTO `match` (`match_id`, `tournament_id`, `player1_id`, `player1_score`,
 
 CREATE TABLE `tournaments` (
   `id` int(20) NOT NULL,
+  `owner_id` int(5) NOT NULL,
   `tournament_picture` char(180) DEFAULT NULL,
   `region` char(20) NOT NULL DEFAULT 'US_EC',
   `online` tinyint(1) NOT NULL DEFAULT 1,
@@ -87,8 +88,8 @@ CREATE TABLE `tournaments` (
 -- Contenu de la table `tournaments`
 --
 
-INSERT INTO `tournaments` (`id`, `tournament_picture`, `region`, `online`, `price`, `debut_date`, `max_participants`) VALUES
-(1, 'https://pbs.twimg.com/profile_images/979421865503424512/QMTKhLWZ_400x400.jpg', 'US_EC', 1, 0, '2022-05-18', 16);
+INSERT INTO `tournaments` (`id`, `owner_id`, `tournament_picture`, `region`, `online`, `price`, `debut_date`, `max_participants`) VALUES
+(1, 0, 'https://pbs.twimg.com/profile_images/979421865503424512/QMTKhLWZ_400x400.jpg', 'US_EC', 1, 0, '2022-05-18', 16);
 
 -- --------------------------------------------------------
 
@@ -100,17 +101,19 @@ CREATE TABLE `users` (
   `id` int(20) NOT NULL,
   `name` char(40) NOT NULL DEFAULT '',
   `region` char(20) NOT NULL DEFAULT 'US_EC',
+  `main_char` varchar(20) DEFAULT NULL,
   `profile_picture` char(180) DEFAULT NULL,
-  `password` text NOT NULL
+  `password` text NOT NULL,
+  `bio` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Contenu de la table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `region`, `profile_picture`, `password`) VALUES
-(1, 'Firquen', 'EU', 'https://pbs.twimg.com/media/FSwMJzNXsAAHYer.jpg', 'passwordtrèscompliqué'),
-(2, 'Namu', 'EU', 'https://cdn.discordapp.com/attachments/556553671501021194/962312307415871528/1577619071292.png', 'pi');
+INSERT INTO `users` (`id`, `name`, `region`, `main_char`, `profile_picture`, `password`, `bio`) VALUES
+(1, 'Firquen', 'EU', NULL, 'https://pbs.twimg.com/media/FSwMJzNXsAAHYer.jpg', 'passwordtrèscompliqué', NULL),
+(2, 'Namu', 'EU', NULL, 'https://cdn.discordapp.com/attachments/556553671501021194/962312307415871528/1577619071292.png', 'pi', NULL);
 
 --
 -- Index pour les tables exportées
