@@ -1,6 +1,6 @@
 <?php
 
-include_once "sqlUtil.php";
+include_once ("sqlUtil.php");
 
 function connectUser($name, $password) 
 {
@@ -66,6 +66,13 @@ function getUserData($id)
     } 
 
     return $Request;
+}
+
+function getUserName($id)
+{
+	$SQL="SELECT name FROM users WHERE id='$id'";
+
+    return SQLGetChamp($SQL);
 }
 
 

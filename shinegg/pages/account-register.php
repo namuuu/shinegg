@@ -7,7 +7,7 @@
 <div id="form">
 <h1> Rejoins-nous !</h1>
 
-<form action="connexionControler.php" method="GET">  
+<form action="controller/connexionController.php" method="GET">  
 
     <label for="id">Nouvel identifiant</label> <br>
     <input name="id" id="id" type="text"> <br>

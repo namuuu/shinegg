@@ -1,0 +1,81 @@
+.matchPreview {
+    margin-bottom: 5%;
+    width: 13vw;
+    border: 1px solid #C93246;
+    background-color: #EC7983;
+    font-family: 'Josefin Sans', sans-serif;    
+}
+.matchPreview > div {
+    border-top: 1px solid #C93246;
+    border-bottom: 1px solid #C93246;
+    height: 2.3vh;
+}
+.matchPreview .matchName {
+    display: inline;
+    float:left;
+    color: black;
+    width: 100px;
+    margin-left: 5px;
+    margin-top: 3px;
+}
+.matchPreview .matchScore {
+    background-color: #C93246;
+    width: 25px;
+    display: inline;
+    float: right;
+    color: white;
+    height: 2.3vh;
+    text-align: center;
+}
+
+#tournament-header {
+    margin-top: 4vh;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#tournament-header img {
+    height: 20vh;
+    width: auto;
+    border-radius: 10vh;
+    margin: 0 2vw;
+}
+
+#tournament-header h1 {
+    display: inline;
+    font-size: 5vw;
+    font-weight: 300;
+}
+
+#bracket {
+    display: flex;
+}
+
+#bracket > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 2%;
+}
+
+#button {
+    border-radius: 5%;
+    background-color: #FFDEE4;
+    border: 1px solid #C93246;
+    color: #C93246;
+    height: 6%;
+    width: auto;
+    padding: 0 1% 0 1%;
+    font-size: 1.5vw;
+    font-family: 'Josefin Sans', sans-serif;
+    transition: all ease-out 100ms;
+}
+
+
+#button:hover {
+    background-color: white;
+    cursor: pointer;
+}
+

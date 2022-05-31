@@ -1,9 +1,11 @@
 <?php
+include_once "../config.php";
+
 session_start();
 
-	include_once "libs/sqlUtil.php";
-    include_once "libs/systemUtil.php";
-    include_once "libs/userUtil.php";
+	include_once "../libs/sqlUtil.php";
+    include_once "../libs/systemUtil.php";
+    include_once "../libs/userUtil.php";
 
 	//$qs = "";
 	$tabQs = array(); 
@@ -37,6 +39,7 @@ session_start();
 			// Connexion //////////////////////////////////////////////////
 			case "Se connecter" :
 				// On verifie la presence des champs login et passe
+				
 
 				if ($login = getArg("id"))
 				if ($passe = getArg("password"))
@@ -92,7 +95,9 @@ session_start();
 
     echo $view;
 
-	$urlBase = dirname($_SERVER["PHP_SELF"]) . "/index.php";
+	$urlBase = dirname($_SERVER["PHP_SELF"]);
+
+	$urlBase = str_replace("controller", "index.php", $urlBase);
 	// On redirige vers la page index avec les bons arguments
   
     redirect($urlBase, $tabQs, false);

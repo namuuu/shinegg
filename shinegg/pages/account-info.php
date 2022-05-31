@@ -1,6 +1,16 @@
 <?php
     include_once('libs/userUtil.php');
     $id = getArg('id');
+
+    if(!$id) {
+        $id = getSession("id");
+        if(!$id) {
+            redirect(dirname($_SERVER["PHP_SELF"]) . "/index.php");
+        }
+    }
+
+    
+
     $userdata = getUserData($id);
 ?>
 

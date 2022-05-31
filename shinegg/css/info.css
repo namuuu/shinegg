@@ -5,6 +5,7 @@
 }
 
 #PDP {
+    object-fit: cover;
     height: 14vw;
     width: 14vw;
     border-radius: 15%;

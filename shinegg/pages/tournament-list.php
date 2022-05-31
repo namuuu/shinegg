@@ -32,7 +32,7 @@ include_once("libs/tournamentUtil.php");
             echo "<a href=\"". $url ."\">  <div class=\"tournament-data\">";
             echo "<div class=\"tournament-date\">" . $tournament["debut_date"] . "</div>";
             echo "<div class=\"tournament-name\">" . $tournament["tournament_name"] . "</div>";
-            echo "<div class=\"tournament-entrants\">" . $tournament["max_participants"] . "</div>";
+            echo "<div class=\"tournament-entrants\">" . getTournamentEntrantsNb($tournament["tournament_id"]) . "/" . $tournament["max_participants"] . "</div>";
             echo "</div> </a>";
         }
         ?>

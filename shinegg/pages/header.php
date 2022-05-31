@@ -27,7 +27,7 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
     <ul id="header-list-right">
         <?php
             if(getSession("id")) {
-                echo "<li> <form action=\"connexionControler.php\"> <input type=\"submit\" name=\"action\" value=\"Se déconnecter\"> </form></li>";
+                echo "<li> <form action=\"controller/connexionController.php\"> <input type=\"submit\" name=\"action\" value=\"Se déconnecter\"> </form></li>";
                 echo "<li> <a href=\"index.php?view=account-info\"> Mon compte </a> </li>";
             } else {
                 echo "<li> <a href=\"index.php?view=account-login\" style=\"font-size: 2.5vh; padding-top: 0;\"> S'inscrire <br> Se connecter </a> </li>";

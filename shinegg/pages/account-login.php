@@ -23,7 +23,7 @@
         }
     ?>
 
-    <form action="connexionControler.php" method="GET">  
+    <form action="controller/connexionController.php" method="GET">  
 
     <label for="id" class="header-input">Identifiant</label> <br>
         <input name="id" id="id" type="text" class="text-input">
