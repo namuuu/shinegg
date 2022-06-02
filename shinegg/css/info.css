@@ -1,7 +1,7 @@
 #baseinfo {
     margin-left: 5%;
     margin-top: 3%;
-    width : 50%;
+    width : 80%;
 }
 
 #PDP {
@@ -11,7 +11,7 @@
     border-radius: 15%;
 }
 
-h1 {
+#baseinfo h1 {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 3vw;
     float: right;
@@ -79,7 +79,7 @@ p {
     font-weight: 300;
 }
 
-h2 {
+#doublediv h2 {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 300;
     font-size: 2vw;
@@ -90,11 +90,106 @@ h2 {
     margin-right: 5%;
     margin-top: 3%;
     padding: 2%;
-    height: 18vw;
+    height: 15vw;
+    border-radius: 10%;
     background-color: #ffb9c6;
     text-align: center;
 }
 
 #connect {
     font-size: 2vw;
+}
+
+#connexion li {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5vw;
+    list-style-type: square;
+    margin-top: 1%;
+    margin-right: 3.1%;
+}
+
+.recent {
+    height: 18vw;
+    width: 40%;
+    border: 2px solid black;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 3%;
+    margin-top: 2%;
+    display: inline-block;
+}
+
+#resultats {
+    margin-left: 0%;
+    float: right;
+}
+
+#recentitle {
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 0%;
+    font-size: 2vw;
+}
+
+#recentitle2 {
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 0%;
+    font-size: 2vw;
+}
+
+.results {
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+}
+
+#lastname {
+    margin-top: 6%;
+}
+
+.barrerouge {
+    float: right;
+    background-color: rgb(253, 70, 70);
+    height: 100%;
+    width: 5%;
+    margin-right: 5%;
+}
+
+.recent h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    font-size: 2vw;
+    margin-top: 0.8%;
+}
+
+.recent img {
+    display: inline;
+    object-fit: cover;
+    height: 14vw;
+    width: 14vw;
+    border-radius: 15%;
+    margin-left: 1%;
+    margin-top: 0.5%;
+}
+
+#tname {
+    display: inline;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+}
+
+#edition {
+    margin-top: 1%;
+    background-color: rgb(255, 96, 96);
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    padding: 1%;
+}
+
+#edition a {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.5vw;
+    color: white;
 }
