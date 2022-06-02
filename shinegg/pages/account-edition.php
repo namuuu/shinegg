@@ -11,7 +11,7 @@
 <div id="titre">
 <h1> Modifier ses informations</h1>
 
-<form action="controler/editControler.php" method="GET">  
+<form action="controller/editControler.php" method="GET">  
 
     <div class="red">
     <label for="pseudo">Pseudonyme</label> 
