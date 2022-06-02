@@ -1,18 +1,79 @@
 
-#recent-tournaments {
+#content {
+    display: flex;
     float: left;
-    background-color: grey;
-    margin-top: 5vh;
-    margin-left: 5vw;
-    width: 25vw;
-    height: 100vh;
+    height: 100%;
+}
+
+#recent-tournaments {
+    background-color: #FFDEE4;
+    padding-top: 5vh;
+    padding-left: 3vw;
+    padding-right: 2vw;
+    width: 26vw;
+    height: 100%;
+}
+
+.tournament-vignette {
+    display: flex;
+    align-items: center;
+    height: 22vh;
+    width: 100%;
+    border: solid 1px black;
+    font-family: 'Josefin Sans', sans-serif;
+    border-radius: 5%;
+    margin-bottom: 4vh;
+}
+
+.tournament-vignette > div {
+    width: 70%;
+    font-size: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tournament-vignette > img {
+    padding-left: 2%;
+    width: 30%;
+    border-radius: 10%;
+    
 }
 
 #feed {
-    float: right;
-    background-color: grey;
     margin-top: 5vh;
     margin-right: 5vw;
     width: 60vw;
     height: 100vh;
 }
+
+.article {
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    border-bottom: 1px solid black;
+}
+
+.article > h1 {
+    font-size: 2.5vw;
+}
+
+.article > span {
+    padding-top: 3vh;
+    display: inline-block;
+    text-align: justify;
+    overflow: hidden;
+    width: 90%;
+    font-size: 1.3vw;
+}
+
+iframe {
+    width: 50vw;
+    height: 30vw;
+}
+

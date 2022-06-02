@@ -68,7 +68,7 @@ if($tournament["status"] != 0) {
     {
         echo "<div>";
         foreach(getMatchesRound($tournamentId, "WR" . $i) as $match) {
-            matchPreview($match["match_id"]);
+            matchPreview($tournamentId, $match["match_id"]);
         }
         echo "</div>";
     }

@@ -20,6 +20,11 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
     <ul id="header-list-left">
         <li> <a href="index.php?view=accueil"> Home </a> </li>
         <li> <a href="index.php?view=tournament-list" style="font-size: 2.5vh; padding-top: 0;"> Liste des <br> tournois</a> </li>
+        <?php
+            if(getArg("view") == "match-view") {
+                echo "<li> <a href=\"index.php?view=tournament-view&tournamentId=" . getArg("tournamentId") .  "\"> Retour </a> </li>";
+            }
+        ?>
     </ul>
 
     <img id="header-image" src="img/logo_shinegg_blanc.png" alt="Logo ShineGG">

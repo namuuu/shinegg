@@ -10,7 +10,7 @@ include_once "matchUtil.php";
 // 3: Finished
 
 function getTournaments() {
-    $SQL = "SELECT id, tournament_name, owner_id, tournament_picture, region, online, price, debut_date, max_participants FROM tournaments";
+    $SQL = "SELECT * FROM tournaments ORDER BY debut_date ASC";
 
     return parcoursRs(SQLSelect($SQL));
 }
@@ -38,7 +38,7 @@ function getTournament($id) {
 
 function getTournamentEntrants($id) {
     $SQL = "SELECT * FROM tournaments
-    JOIN entry ON tournaments.tournament_id = entry.tournament_id
+    JOIN entry ON tournaments.id = entry.tournament_id
     JOIN users ON entry.player_id = users.id";
 
     return parcoursRs(SQLSelect($SQL));
@@ -47,7 +47,8 @@ function getTournamentEntrants($id) {
 function getTournamentEntrantsNb($id)
 {
     $SQL = "SELECT count(*) FROM tournaments
-    JOIN entry ON tournaments.id = entry.tournament_id";
+    JOIN entry ON tournaments.id = entry.tournament_id
+    WHERE tournaments.id = '$id'";
 
     return SQLGetChamp($SQL);
 }
@@ -55,7 +56,7 @@ function getTournamentEntrantsNb($id)
 function getTournamentOwnerId($tourneyId)
 {
     $SQL = "SELECT id FROM tournaments
-            WHERE tournament_id = '$tourneyId'";
+            WHERE id = '$tourneyId'";
 }
 
 function getAllMatches() 
@@ -134,22 +135,46 @@ function generateTournament($tourneyId)
 
     $i = 1;
 
+    
+
     foreach(getTournamentEntrants($tourneyId) as $entrant) {
-        $sqlCheck = "SELECT match_id FROM matches WHERE tournament_id = '$tourneyId' AND location LIKE WR-" . $i;
+        $matchId = "SELECT match_id FROM matches WHERE tournament_id = '$tourneyId' AND location LIKE 'WR1-$i'";
 
-        $sqlCheck = SQLGetChamp($sqlCheck);
+        $matchId = SQLGetChamp($matchId);
 
-        if($sqlCheck) {
-            enableMatch($sqlCheck, $entrant);
+        if($matchId) {
+            enableMatch($matchId, $entrant["id"]);
             $i++;
         } else {
             $i = 1;
+            $matchId = "SELECT match_id FROM matches WHERE tournament_id = '$tourneyId' AND location LIKE 'WR1-1'";
+
+            $matchId = SQLGetChamp($matchId);
+            enableMatch($matchId, $entrant["id"]);
+            $i++;
         }
     }
 
     SQLUpdate("UPDATE tournaments
                 SET status = 1
                 WHERE id = $tourneyId");
+}
+
+function createTournament($name, $nbPart, $date, $image)
+{
+    $id = SQLGetChamp("SELECT MAX(id)
+    FROM tournaments");
+
+    $id++;
+
+    $userId = getSession("id");
+
+    $sql = "INSERT INTO tournaments(id, tournament_name, owner_id, tournament_picture, debut_date, max_participants)
+	        VALUES ($id, '$name', '$userId', '$image', '$date', '$nbPart')";
+
+    echo $sql . "<br>";
+    
+    SQLInsert($sql);
 }
 
 

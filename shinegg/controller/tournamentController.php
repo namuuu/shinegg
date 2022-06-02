@@ -6,6 +6,7 @@ session_start();
 	include_once "../libs/sqlUtil.php";
     include_once "../libs/systemUtil.php";
     include_once "../libs/userUtil.php";
+	include_once "../libs/matchUtil.php";
     include_once "../libs/tournamentUtil.php";
 
 	//$qs = "";
@@ -59,7 +60,75 @@ session_start();
                     $tabQs["view"] = "tournament-view";
                     $tabQs["tournamentId"] = getArg("tournamentId");
                 }
+				break;
+			case "Victoire 1":
+				$matchId = getArg("matchId");
+				$tournamentId = getArg("tournamentId");
+				winMatch1($tournamentId, $matchId);
+			break;
+			case "Victoire 2":
+				$matchId = getArg("matchId");
+				$tournamentId = getArg("tournamentId");
+				winMatch2($tournamentId, $matchId);
             break;
+			case "Accorder la victoire au joueur 1":
+				$agreedPlayer = 1;
+			case "Accorder la victoire au joueur 2":
+				if($agreedPlayer != 1)
+					$agreedPlayer = 2;
+
+				// Détermine les données
+				$matchId = getArg("matchId");
+				$tournamentId = getArg("tournamentId");
+
+				// Return si données invalides
+				if(!$matchId)
+					break;
+				if(!$tournamentId)
+					break;
+
+				// Prévention retour à la fenêtre initiale
+				$tabQs["view"] = "match-view";
+				$tabQs["tournamentId"] = $tournamentId;
+				$tabQs["matchId"] = $matchId;
+
+				if(isMatchFinished($matchId)) {
+					$tabQs["view"] = "tournament-view";
+					break;
+				}
+
+				$match = getMatch($matchId);
+
+				// Update l'agreement
+				if(getSession("id") == $match["player1_id"] || getSession("id") == $match["player2_id"]) {
+					agree($matchId, getSession("id"), $agreedPlayer);
+				}
+
+				// Update le score si l'agreement est correct
+				matchAgreeCheck($matchId);
+
+				// Finalise le match si le score_max est atteint
+				maxScoreCheck($matchId);
+
+				if(isMatchFinished($matchId))
+					$tabQs["view"] = "tournament-view";
+
+			break;
+			case "Créer un tournoi":
+				$$tabQs["view"] = "tournament-list";
+				$id = getSession("id");
+				$name = getArg("name");
+				$numberPlayers = getArg("numberPlayers");
+				$date = getArg("date");
+				$image = getArg("image");
+				if(!$id)
+					break;
+				if (!$name || !$numberPlayers || !$date || !$image)
+					break;
+				
+				createTournament($name, $numberPlayers, $date, $image);
+				return;
+			break;
 		}
 
 	}

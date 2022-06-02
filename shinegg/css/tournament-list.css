@@ -2,6 +2,31 @@ body {
     text-align: center;
 }
 
+#create-button {
+    
+    height: 7vh;
+    width: 100%;
+    margin-bottom: 3vh;
+    
+}
+
+#create-button > div {
+    margin-top: 3vh;
+    border: 1px solid black;
+    padding: 1vh;
+    margin-right: 2.6vw;
+    color: white;
+    font-size: 3vh;
+    font-family: 'Josefin Sans', sans-serif;
+    float:right;
+    background-color: #C93246;
+    cursor: pointer;
+}
+
+#create-button a {
+    color: white;
+}
+
 #main-list {
     display: block;
     margin: 2vh auto 0 auto;

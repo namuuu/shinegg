@@ -55,7 +55,7 @@ function createUser($name, $password)
 
 function getUserData($id) 
 {
-    $SQL="SELECT name, main_char, team, bio, profile_picture FROM users WHERE id='$id'";
+    $SQL="SELECT * FROM users WHERE id='$id'";
 
     $Request = parcoursRs(SQLSelect($SQL))[0];
     // si on avait besoin de plus d'un champ
