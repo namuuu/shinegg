@@ -1,16 +1,21 @@
 <?php
 session_start();
+	include_once "../libs/sqlUtil.php";
+	include_once "../libs/systemUtil.php";
+	include_once "../libs/userUtil.php";
+	include_once "../libs/matchUtil.php";
+	include_once "../libs/tournamentUtil.php";
+	include_once "../config.php";
 
-	include_once "libs/sqlUtil.php";
-    include_once "libs/systemUtil.php";
-    include_once "libs/userUtil.php";
 	$id = $_SESSION['id'];
 	$tabQs = array(); 
+
+
 	
 	if ($view = getArg("view")) {
-	  $tabQs["view"] = $view;
-      echo $view;
-	}
+		//$qs = "view=$view";
+		$tabQs["view"] = $view;
+	  }
 
 	if ($action = getArg("action"))
 	{
@@ -19,7 +24,6 @@ session_start();
 
 		switch($action)
 		{
-			
 			
 			// Edition //////////////////////////////////////////////////
 			case "Editer le profil" :
@@ -49,7 +53,7 @@ session_start();
 					changeMainUser($id, $main);
 				}
 				
-				$tabQs["view"] = "account-info";
+				$tabQs['view'] = "account-info";
 			break;
 		}
 	}
@@ -60,11 +64,11 @@ session_start();
 
     echo $view;
 
-	$urlBase = dirname($_SERVER["PHP_SELF"]) . "/index.php";
-	// On redirige vers la page index avec les bons arguments
-  
-    redirect($urlBase, $tabQs, false);
-	//header("Location:" . $urlBase . $qs);
+	$urlBase = dirname($_SERVER["PHP_SELF"]);
+
+	$urlBase = str_replace("controller", "index.php", $urlBase);
+
+	redirect($urlBase, $tabQs, false);
 
 	// On écrit seulement après cette entête
 	ob_end_flush();

@@ -127,7 +127,7 @@ session_start();
 					break;
 				
 				createTournament($name, $numberPlayers, $date, $image);
-				return;
+
 			break;
 		}
 

@@ -39,7 +39,8 @@ function getTournament($id) {
 function getTournamentEntrants($id) {
     $SQL = "SELECT * FROM tournaments
     JOIN entry ON tournaments.id = entry.tournament_id
-    JOIN users ON entry.player_id = users.id";
+    JOIN users ON entry.player_id = users.id
+    WHERE tournaments.id = '$id'";
 
     return parcoursRs(SQLSelect($SQL));
 }

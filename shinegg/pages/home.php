@@ -21,7 +21,7 @@
             echo "<img src=\"". $tournament["tournament_picture"] ."\" alt=\"Tournament Picture\"\"> </img>";
             echo "<div>";
             echo "<h2>" . $tournament["tournament_name"] . "</h2>";
-            echo "<span>" . $tournament["debut_date"] . " | " . getTournamentEntrantsNb($tournament["tournament_id"]) . "/" . $tournament["max_participants"] . "</span>";
+            echo "<span>" . $tournament["debut_date"] . " | " . getTournamentEntrantsNb($tournament["id"]) . "/" . $tournament["max_participants"] . "</span>";
             echo "</div>";
             echo "</div>";
         }

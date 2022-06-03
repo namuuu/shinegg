@@ -68,6 +68,21 @@ function getUserData($id)
     return $Request;
 }
 
+function getUserProfil($id) 
+{
+	$SQL="SELECT name, main_char, team, bio, profile_picture, twitter, discord, smash_gg, slippi FROM users WHERE id='$id'";
+
+	$Request = parcoursRs(SQLSelect($SQL))[0];
+	// si on avait besoin de plus d'un champ
+	// on aurait du utiliser SQLSelect
+
+	if (!$Request) {
+		return false;
+	} 
+
+	return $Request;
+}
+
 function getUserName($id)
 {
 	$SQL="SELECT name FROM users WHERE id='$id'";

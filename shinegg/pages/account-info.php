@@ -2,17 +2,19 @@
     include_once('libs/userUtil.php');
     include_once('libs/tournamentUtil.php');
     $id = getArg('id');
+    if(!$id)
+        $id = getSession("id");
     $i = 1;
     $win = 0;
     $lose = 0;
     $winrate = 0;
-    $userdata = getUserData($id);
+    $userdata = getUserProfil($id);
     $matchdata = mostRecentMatch($id);
     if ($matchdata['player2_id'] == $id) {
-        $player2data = getUserData($matchdata['player1_id']);
+        $player2data = getUserProfil($matchdata['player1_id']);
     }
     if ($matchdata['player1_id'] == $id) {
-        $player2data = getUserData($matchdata['player2_id']);
+        $player2data = getUserProfil($matchdata['player2_id']);
     }
     $tournamentdata = getTournament($matchdata['tournament_id']);
 

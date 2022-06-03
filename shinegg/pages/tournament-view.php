@@ -75,4 +75,8 @@ if($tournament["status"] != 0) {
     echo "</div>";
 }
 
+foreach (getTournamentEntrants($tournamentId) as $entrant) {
+    echo $entrant["name"];
+}
+
 ?>
